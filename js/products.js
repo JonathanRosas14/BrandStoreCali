@@ -111,6 +111,7 @@ const PRODUCTS = [
   {
     id: "kit-pro", cat: "kits", name: "Kit Carga Pro 40W", word: "Pro", color: "#25314B", tone: "#37476B", media: ["c40", "usbc"],
     parts: ["c40", "usbc"], price: 180000,
+    layout: [[40, 48, 58], [74, 57, 58]],
     short: "Cargador dinámico 40W + cable USB-C trenzado.",
     tag: "La carga más rápida para tu iPhone reciente, con potencia de sobra para iPad y MacBook Air.",
     varLabel: "Contenido", vars: [{ label: "40W + USB-C 1 m" }],

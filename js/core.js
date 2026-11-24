@@ -66,14 +66,17 @@ function productMedia(p, { cls = "" } = {}) {
   w.style.setProperty("--len", Math.max(3, p.word.length));
   w.setAttribute("aria-hidden", "true");
   m.append(w, h("span", "pmedia-shadow"));
-  const slots = MEDIA_LAYOUT[p.media.length] || MEDIA_LAYOUT[1];
+  const slots = p.layout || MEDIA_LAYOUT[p.media.length] || MEDIA_LAYOUT[1];
+  // Con layout propio, las imágenes van en un lienzo cuadrado centrado:
+  // así el grupo queda centrado en tarjetas 1:1, 5:4 o 16:11 por igual.
+  const holder = p.layout ? m.appendChild(h("span", "pmedia-group")) : m;
   p.media.forEach((key, i) => {
     const [x, y, ht] = slots[i];
     const im = h("span", "pmedia-img");
     cropPct(im, key);
     im.style.left = x + "%"; im.style.top = y + "%"; im.style.height = ht + "%";
     im.style.setProperty("--d", i);
-    m.appendChild(im);
+    holder.appendChild(im);
   });
   m.setAttribute("role", "img");
   m.setAttribute("aria-label", p.name);
