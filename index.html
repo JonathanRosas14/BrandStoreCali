@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BrandStore — Tecnología, accesorios y gadgets</title>
+<meta name="description" content="AirPods, cargadores, cables y kits. Explora el catálogo y pide por WhatsApp.">
+<meta name="theme-color" content="#1F5FD6">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/hero.css">
+<link rel="stylesheet" href="css/store.css">
+<link rel="stylesheet" href="css/panel.css">
+</head>
+<body>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3Z"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="M20 20l-4.2-4.2"/></g></symbol>
+  <symbol id="i-x" viewBox="0 0 20 20"><path d="M5 5l10 10M15 5L5 15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-left" viewBox="0 0 24 24"><path d="M19 12H5M11 6l-6 6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 20 20"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24"><path d="M4 7h10M18 7h2M4 17h4M12 17h8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="16" cy="7" r="2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="10" cy="17" r="2" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+</svg>
+
+<!-- ============================ PORTADA ============================ -->
+<header class="hero" id="hero">
+  <h1 class="sr">BrandStore: AirPods, cargadores, cables y kits</h1>
+  <div class="stage" id="stage" aria-roledescription="carrusel" aria-label="Productos destacados"></div>
+
+  <div class="ui" id="ui">
+    <div class="hdr">
+      <a class="logo rise" href="#" aria-label="BrandStore inicio" style="transition-delay:250ms">
+        <span class="logo-w">Brand<span>Store</span></span>
+        <svg viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 60 1, 140 0, 198 3" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+      </a>
+      <nav class="tabs rise" id="tabs" aria-label="Productos de la portada" style="transition-delay:330ms"><span class="uline" id="uline"></span></nav>
+      <div class="acct rise" style="transition-delay:410ms">
+        <button type="button" class="acct-icon" id="heroSearch" aria-label="Buscar productos"><svg class="ic"><use href="#i-search"/></svg></button>
+        <a href="#tienda">Tienda</a>
+        <span class="sep" aria-hidden="true">|</span>
+        <a id="waTop" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg class="ic"><use href="#i-wa"/></svg><span id="waTopTxt" class="wa-num"></span>
+        </a>
+      </div>
+    </div>
+    <button class="arrow prev rise" id="prev" aria-label="Producto anterior" style="transition-delay:490ms">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M24 14H4 M12 6l-8 8 8 8"/></svg>
+    </button>
+    <button class="cta rise" id="cta" style="transition-delay:570ms">VER PRODUCTO</button>
+    <button class="arrow next rise" id="next" aria-label="Siguiente producto" style="transition-delay:650ms">
+      <svg viewBox="0 0 28 28" aria-hidden="true"><path d="M4 14h20 M16 6l8 8-8 8"/></svg>
+    </button>
+  </div>
+</header>
+
+<!-- ============================= TIENDA ============================= -->
+<main class="store" id="tienda">
+  <div class="bar">
+    <div class="bar-in">
+      <a class="logo bar-logo" href="#" aria-label="Volver al inicio">
+        <span class="logo-w">Brand<span>Store</span></span>
+        <svg viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 60 1, 140 0, 198 3" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+      </a>
+      <div class="search" id="search" role="search">
+        <svg class="ic search-ic"><use href="#i-search"/></svg>
+        <label class="sr" for="q">Buscar productos</label>
+        <input id="q" type="search" placeholder="Buscar AirPods, cargadores, cables…" autocomplete="off" spellcheck="false" enterkeyhint="search">
+        <kbd class="search-kbd" aria-hidden="true">/</kbd>
+        <button type="button" class="search-clear" id="qClear" aria-label="Limpiar búsqueda"><svg class="ic"><use href="#i-x"/></svg></button>
+      </div>
+      <a class="bar-wa" data-wa href="#" target="_blank" rel="noopener">
+        <svg class="ic"><use href="#i-wa"/></svg><span>Pedir por WhatsApp</span>
+      </a>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <!-- Destacados -->
+    <section class="sec" aria-labelledby="featT">
+      <div class="sec-head">
+        <div><span class="kicker">Selección BrandStore</span><h2 class="sec-title" id="featT">Destacados</h2></div>
+      </div>
+      <div class="feat" id="featured" data-reveal></div>
+    </section>
+
+    <!-- Catálogo -->
+    <section class="sec" id="catalogo" aria-labelledby="catT">
+      <div class="sec-head">
+        <div><span class="kicker">Tienda</span><h2 class="sec-title" id="catT">Todo el catálogo</h2></div>
+      </div>
+      <div class="shop">
+        <aside class="filters" id="filters" aria-label="Filtros">
+          <div class="f-head">
+            <h3 class="f-heading">Filtros</h3>
+            <button type="button" class="f-clear" id="fClear" hidden>Limpiar</button>
+            <button type="button" class="f-close" id="fClose" aria-label="Cerrar filtros"><svg class="ic"><use href="#i-x"/></svg></button>
+          </div>
+          <div class="f-scroll">
+            <div class="f-group">
+              <h4 class="f-title">Categorías</h4>
+              <div class="f-list" id="fCats"></div>
+            </div>
+            <div class="f-group">
+              <h4 class="f-title">Precio</h4>
+              <div class="f-list" id="fPrice"></div>
+            </div>
+            <div class="f-group">
+              <h4 class="f-title">Mostrar solo</h4>
+              <button type="button" class="f-switch" id="fOffers" role="switch" aria-checked="false"><span>En oferta</span><i></i></button>
+              <button type="button" class="f-switch" id="fNew" role="switch" aria-checked="false"><span>Novedades</span><i></i></button>
+            </div>
+          </div>
+          <div class="f-foot"><button type="button" class="btn btn-ink" id="fApply">Ver productos</button></div>
+        </aside>
+
+        <div class="results">
+          <div class="toolbar">
+            <button type="button" class="btn btn-line f-btn" id="fBtn"><svg class="ic"><use href="#i-filter"/></svg>Filtros<span class="f-btn-n" id="fBtnCount" hidden></span></button>
+            <p class="result-txt" id="resultTxt" aria-live="polite"></p>
+            <label class="sort"><span class="sr">Ordenar por</span>
+              <select id="sort">
+                <option value="featured">Destacados</option>
+                <option value="new">Novedades</option>
+                <option value="asc">Menor precio</option>
+                <option value="desc">Mayor precio</option>
+                <option value="name">Nombre A–Z</option>
+              </select>
+            </label>
+          </div>
+          <div class="chips-row" id="chipsRow" aria-label="Categorías"></div>
+          <div class="achips" id="activeChips"></div>
+
+          <div class="grid" id="grid" data-reveal></div>
+          <div class="empty" id="empty" hidden>
+            <svg class="ic empty-ic"><use href="#i-search"/></svg>
+            <h3>No encontramos productos para <span id="emptyQ"></span></h3>
+            <p>Revisa la ortografía, prueba con otra palabra o explora todas las categorías.</p>
+            <button type="button" class="btn btn-ink" id="emptyClear">Ver todo el catálogo</button>
+          </div>
+          <button type="button" class="btn btn-line more" id="more" hidden></button>
+          <div id="sentinel" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Novedades -->
+    <section class="sec" aria-labelledby="newT">
+      <div class="sec-head">
+        <div><span class="kicker">Recién llegados</span><h2 class="sec-title" id="newT">Novedades</h2></div>
+        <div class="row-nav" data-row="rowNew">
+          <button type="button" data-dir="-1" aria-label="Anteriores"><svg class="ic"><use href="#i-left"/></svg></button>
+          <button type="button" data-dir="1" aria-label="Siguientes"><svg class="ic"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+      <div class="row" id="rowNew" data-reveal></div>
+    </section>
+
+    <!-- Kits -->
+    <section class="sec" aria-labelledby="kitT">
+      <div class="sec-head">
+        <div><span class="kicker">Ahorra comprando junto</span><h2 class="sec-title" id="kitT">Kits recomendados</h2></div>
+        <div class="row-nav" data-row="rowKits">
+          <button type="button" data-dir="-1" aria-label="Anteriores"><svg class="ic"><use href="#i-left"/></svg></button>
+          <button type="button" data-dir="1" aria-label="Siguientes"><svg class="ic"><use href="#i-arrow"/></svg></button>
+        </div>
+      </div>
+      <div class="row" id="rowKits" data-reveal></div>
+    </section>
+  </div>
+</main>
+
+<!-- ============================= FOOTER ============================= -->
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-brand">
+      <a class="logo foot-logo" href="#" aria-label="Volver al inicio">
+        <span class="logo-w">Brand<span>Store</span></span>
+        <svg viewBox="0 0 200 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 9 C 60 1, 140 0, 198 3" stroke="currentColor" stroke-width="2.4" fill="none" stroke-linecap="round"/></svg>
+      </a>
+      <p class="foot-tag">Tecnología <i>•</i> Accesorios <i>•</i> Gadgets</p>
+      <p class="foot-note">Elige tu producto y te confirmamos disponibilidad y envío por WhatsApp.</p>
+    </div>
+    <nav class="foot-col" aria-labelledby="fcT">
+      <h3 id="fcT">Categorías</h3>
+      <ul id="footCats"></ul>
+    </nav>
+    <div class="foot-col">
+      <h3>Contacto</h3>
+      <a class="foot-wa" data-wa href="#" target="_blank" rel="noopener"><svg class="ic"><use href="#i-wa"/></svg><span data-wa-label></span></a>
+      <p class="foot-small">Pedidos y asesoría por WhatsApp.</p>
+    </div>
+  </div>
+  <div class="foot-bottom">© <span id="year"></span> BrandStore</div>
+</footer>
+
+<!-- ========================= FICHA DE PRODUCTO ========================= -->
+<div class="scrim" id="scrim"></div>
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-labelledby="pName">
+  <div class="panel-scroll">
+    <div class="p-top st" style="--i:0">
+      <span class="eyebrow" id="pCat"></span>
+      <button class="close" id="close" aria-label="Cerrar ficha"><svg class="ic"><use href="#i-x"/></svg></button>
+    </div>
+    <div class="p-media st" id="pMedia" style="--i:1"></div>
+    <h2 class="p-name st" id="pName" style="--i:1"></h2>
+    <p class="p-tag st" id="pTag" style="--i:2"></p>
+    <div class="p-price st" style="--i:3">
+      <span class="p-now" id="pNow"></span><span class="p-old" id="pOld"></span><span class="p-off" id="pOff"></span>
+    </div>
+    <div class="st" style="--i:4">
+      <h3 class="p-h" id="pVarH">Color</h3>
+      <div class="chips" id="pVars" role="group" aria-labelledby="pVarH"></div>
+    </div>
+    <div class="st" style="--i:5">
+      <h3 class="p-h">Lo que obtienes</h3>
+      <ul class="feats" id="pFeats"></ul>
+    </div>
+    <div class="st" style="--i:6">
+      <h3 class="p-h">En la caja</h3>
+      <p class="box" id="pBox"></p>
+    </div>
+  </div>
+  <div class="p-foot st" style="--i:7">
+    <div class="buyrow">
+      <div class="qty" role="group" aria-label="Cantidad">
+        <button id="qMinus" aria-label="Quitar uno">−</button>
+        <output id="qOut" aria-live="polite">1</output>
+        <button id="qPlus" aria-label="Agregar uno">+</button>
+      </div>
+      <div class="total"><small>Total</small><strong id="pTotal"></strong></div>
+    </div>
+    <a class="wa" id="pWa" href="#" target="_blank" rel="noopener">
+      <svg class="ic wa-ic"><use href="#i-wa"/></svg>
+      Comprar por WhatsApp
+    </a>
+    <p class="wa-note">Confirmamos disponibilidad y envío por chat.</p>
+  </div>
+</aside>
+<div class="f-scrim" id="fScrim"></div>
+
+<script src="js/config.js"></script>
+<script src="js/products.js"></script>
+<script src="js/media.js"></script>
+<script src="js/core.js"></script>
+<script src="js/detail.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/store.js"></script>
+</body>
+</html>

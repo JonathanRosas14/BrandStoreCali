@@ -1,0 +1,26 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "dark-glow",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-21T00:10:21.117Z",
+        "reason": "Prompt del usuario (Blendy §3) pide text-shadow 0 1px 6px oscuro para legibilidad del texto blanco; no es un halo de color"
+      },
+      {
+        "rule": "nested-cards",
+        "value": "*",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-11-24T02:09:09.157Z",
+        "reason": "Claude triage: the rounded coloured tile inside each product card is the product image (.pmedia), not a nested card container; it is the hero's colour+word+cut-out motif reused"
+      }
+    ]
+  }
+}
