@@ -12,6 +12,7 @@ const CATEGORIES = [
   { id: "audio",  name: "Audio",         desc: "AirPods y audífonos" },
   { id: "carga",  name: "Cargadores",    desc: "Adaptadores USB-C" },
   { id: "cables", name: "Cables",        desc: "USB-C y Lightning" },
+  { id: "relojes", name: "Relojes",      desc: "Apple Watch y smartwatch" },
   { id: "kits",   name: "Kits y combos", desc: "Ahorra comprando junto" }
 ];
 
@@ -53,6 +54,15 @@ const PRODUCTS = [
     varLabel: "Color", vars: [{ label: "Blanco estelar", swatch: "#E9E1D4" }, { label: "Naranja", swatch: "#F3A57E" }, { label: "Morado", swatch: "#B9AEE0" }, { label: "Azul", swatch: "#7C8EA3" }, { label: "Medianoche", swatch: "#2C3138" }],
     feats: ["Cancelación activa de ruido y modo Ambiente", "Audio Espacial con seguimiento dinámico de la cabeza", "Hasta 20 h de batería, carga por USB-C", "Corona Digital para volumen y llamadas"],
     box: "AirPods Max, Smart Case, cable USB-C."
+  },
+  {
+    id: "aw11", cat: "relojes", name: "Apple Watch Series 11", word: "Watch", color: "#3D63C9", tone: "#6084E0", media: ["aw11"],
+    price: 210000, isNew: true,
+    short: "Reloj inteligente con seguimiento de salud, sueño y entrenamientos.",
+    tag: "Seguimiento de salud, sueño y actividad en una pantalla siempre activa, con batería para todo el día.",
+    varLabel: "Color", vars: [{ label: "Negro azabache", swatch: "#1C1C1E" }],
+    feats: ["Pantalla siempre activa", "Puntuación de sueño y seguimiento de actividad", "Hasta 24 h de batería", "Resistente al agua para natación"],
+    box: "Apple Watch Series 11, correa deportiva, cable de carga magnética a USB-C."
   },
   {
     id: "c20", cat: "carga", name: "Cargador USB-C 20W", word: "20W", color: "#0A7AB8", tone: "#2E94CC", media: ["c20"],
