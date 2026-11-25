@@ -10,7 +10,8 @@ const IMG = {
   c20:   { src: "Assets/web/cargador-20w.webp",           w: 1536, h: 1024 },
   c40:   { src: "Assets/web/cargador-40w.webp",           w: 1237, h: 1272 },
   usbc:  { src: "Assets/web/cable-usb-c.webp",            w: 1230, h: 1278 },
-  light: { src: "Assets/web/cable-usb-c-lightning.webp",  w: 1241, h: 1268 }
+  light: { src: "Assets/web/cable-usb-c-lightning.webp",  w: 1241, h: 1268 },
+  aw11:  { src: "Assets/web/apple-watch-series-11.webp",  w: 426,  h: 484 }
 };
 const ITEM = {
   pro2:  ["pro2",  [49, 91, 629, 754]],
@@ -20,6 +21,7 @@ const ITEM = {
   c40:   ["c40",   [152, 85, 933, 944]],
   usbc:  ["usbc",  [344, 30, 557, 1057]],
   light: ["light", [331, 29, 571, 1065]],
+  aw11:  ["aw11",  [12, 9, 402, 467]],
   budL:  ["pro3",  [212, 155, 160, 225]],   // auricular suelto (izquierdo)
   budR:  ["pro3",  [418, 276, 212, 156]]    // auricular suelto (derecho)
 };
@@ -39,7 +41,7 @@ const SLIDES = [
   { product: "c20",   media: "c20",   tab: "20W",       h: 500 },
   { product: "c40",   media: "c40",   tab: "40W",       h: 500 },
   { product: "usbc",  media: "usbc",  tab: "USB-C",     h: 600 },
-  { product: "light", media: "light", tab: "Lightning", h: 600 }
+  { product: "aw11",  media: "aw11",  tab: "Watch",     h: 540 }
 ];
 
 /* ---------- crop helpers ---------- */
