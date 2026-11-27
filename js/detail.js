@@ -23,7 +23,7 @@ const Detail = (() => {
       if (x.swatch) { const d = h("span", "dot"); d.style.background = x.swatch; c.appendChild(d); }
       c.append(x.label);
       if (hasRange(p)) c.append(h("span", "chip-sub", money.format(varPrice(p, x))));
-      c.addEventListener("click", () => { variant = i; render(); });
+      c.addEventListener("click", () => { variant = i; if (!seeCart.hidden) resetAdd(); render(); });
       return c;
     }));
     $("#pFeats").replaceChildren(...p.feats.map(f => { const li = h("li"); li.append(icon("i-check"), f); return li; }));
@@ -38,6 +38,7 @@ const Detail = (() => {
     if (open) return;
     p = productById(id); if (!p) return;
     source = src; onClose = opts.onClose || null; qty = 1; variant = 0;
+    resetAdd();
     render();
     open = true;
     lastFocus = document.activeElement;
@@ -55,6 +56,30 @@ const Detail = (() => {
     if (lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
     if (onClose) onClose();
   }
+
+  const addBtn = $("#pAdd"), addTxt = $("#pAddTxt"), seeCart = $("#pSeeCart");
+  let addTimer = 0;
+  function resetAdd() {
+    clearTimeout(addTimer); addTimer = 0;
+    addBtn.classList.remove("is-done"); addTxt.textContent = "Agregar al carrito";
+    seeCart.hidden = true; $("#pAddLive").textContent = "";
+  }
+  addBtn.addEventListener("click", () => {
+    const v = p.vars[variant];
+    if (!Cart) return;
+    const added = Cart.add(p.id, v.label, qty, { announce: false });
+    const units = n => `${n} ${n === 1 ? "unidad" : "unidades"}`;
+    let label, said;
+    if (!added) { label = "Máximo 20 en el carrito"; said = `No se agregó: ya tienes el máximo de 20 unidades de ${p.name} (${v.label}).`; }
+    else if (added < qty) { label = `Agregado ✓ (máx. 20)`; said = `Agregado al carrito: ${p.name} (${v.label}), ${units(added)}. Llegaste al máximo de 20.`; }
+    else { label = "Agregado ✓"; said = `Agregado al carrito: ${p.name} (${v.label}), ${units(added)}.`; }
+    addBtn.classList.toggle("is-done", !!added); addTxt.textContent = label;
+    seeCart.hidden = false;
+    $("#pAddLive").textContent = ""; setTimeout(() => { $("#pAddLive").textContent = said; }, 30);
+    clearTimeout(addTimer);
+    addTimer = setTimeout(() => { addBtn.classList.remove("is-done"); addTxt.textContent = "Agregar al carrito"; }, 1800);
+  });
+  seeCart.addEventListener("click", () => { if (Cart) Cart.open(addBtn); });
 
   $("#close").addEventListener("click", closeDetail);
   $("#scrim").addEventListener("click", closeDetail);

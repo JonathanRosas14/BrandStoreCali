@@ -129,7 +129,7 @@ const Hero = (() => {
   function clearFloat(s) { LAYERS.forEach(n => { s.L[n].style.translate = ""; }); }
 
   function go(to, dir) {
-    if (busy || Detail.isOpen || to === cur) return;
+    if (busy || Detail.isOpen || Cart.isOpen || to === cur) return;
     const A = slideEls[cur], B = slideEls[to];
     cur = to; placeUnderline(); written = -1;
     if (RM.matches) {
@@ -161,7 +161,7 @@ const Hero = (() => {
   $("#prev").addEventListener("click", () => { user(); prev(); });
   $("#cta").addEventListener("click", openDetail);
   addEventListener("keydown", e => {
-    if (Detail.isOpen || !heroVisible || isTyping(e.target) || document.body.classList.contains("is-filters")) return;
+    if (Detail.isOpen || Cart.isOpen || !heroVisible || isTyping(e.target) || document.body.classList.contains("is-filters")) return;
     if (e.key === "ArrowRight") { user(); next(); }
     else if (e.key === "ArrowLeft") { user(); prev(); }
   });
@@ -183,7 +183,7 @@ const Hero = (() => {
 
   /* ---------- horizontal swipe / drag ---------- */
   let pd = null, dragMoved = false;
-  stage.addEventListener("pointerdown", e => { if (Detail.isOpen) return; pd = { x: e.clientX, y: e.clientY }; dragMoved = false; });
+  stage.addEventListener("pointerdown", e => { if (Detail.isOpen || Cart.isOpen) return; pd = { x: e.clientX, y: e.clientY }; dragMoved = false; });
   addEventListener("pointermove", e => { if (pd && Math.hypot(e.clientX - pd.x, e.clientY - pd.y) > 10) dragMoved = true; });
   addEventListener("pointerup", e => {
     if (!pd) return;
@@ -196,7 +196,7 @@ const Hero = (() => {
   /* ---------- autoplay (only while the hero is on screen) ---------- */
   new IntersectionObserver(([en]) => { heroVisible = en.intersectionRatio > .35; }, { threshold: [0, .35, 1] }).observe(hero);
   setInterval(() => {
-    if (document.visibilityState !== "visible" || Detail.isOpen || !heroVisible) return;
+    if (document.visibilityState !== "visible" || Detail.isOpen || Cart.isOpen || !heroVisible) return;
     if (performance.now() - lastUser < 6000) return;
     next();
   }, 2600);
