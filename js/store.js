@@ -206,7 +206,7 @@
   $("#qClear").addEventListener("click", () => { update({ q: "" }, { scroll: false }); input.focus(); });
   $("#emptyClear").addEventListener("click", () => { update({ ...DEFAULTS, sort: S.sort }, { scroll: false }); input.focus({ preventScroll: true }); });
   addEventListener("keydown", e => {                 // "/" focuses the search from anywhere
-    if (e.key === "/" && !isTyping(e.target) && !Detail.isOpen) { e.preventDefault(); focusSearch(); }
+    if (e.key === "/" && !isTyping(e.target) && !Detail.isOpen && !Cart.isOpen) { e.preventDefault(); focusSearch(); }
   });
   function focusSearch() {
     const bar = $(".bar"), y = scrollY + bar.getBoundingClientRect().top;
